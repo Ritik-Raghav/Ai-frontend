@@ -10,6 +10,9 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import { Copy, Check, Eye, Code2 } from "lucide-react";
 
+//@ts-ignore
+const url = import.meta.env.VITE_URL;
+
 interface PreviewAreaProps {
   content: string;
 }
@@ -177,7 +180,7 @@ const PreviewArea: React.FC<PreviewAreaProps> = ({ content }) => {
       js: jsBlocks.join("\n"),
     };
 
-    fetch("http://localhost:3000/api/save-code", {
+    fetch(`${url}/api/save-code`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

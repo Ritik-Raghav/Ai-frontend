@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
 import { callGroqAPI } from "@/lib/groq"; // your AI call
 import { callGeminiAPI } from "@/lib/gemini"; // your AI call
 
+//@ts-ignore
+const url = import.meta.env.VITE_URL;
+
 export type MessageType = {
   id: string;
   content: string;
@@ -60,7 +63,7 @@ const ChatContainer = ({ setResponseFromAI, landingPrompt }: ChatContainerProps)
 
       // UNCOMMENT TO SAVE RAW FILES
 
-      await fetch("http://localhost:3000/api/save-response", {
+      await fetch(`${url}/api/save-response`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowUp, Paperclip } from "lucide-react";
 
+//@ts-ignore
+const url = import.meta.env.VITE_URL;
+
 const Landing = () => {
   const [prompt, setPrompt] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -78,7 +81,7 @@ const Landing = () => {
             </Button>
           ) : (
             <a
-              href="http://localhost:3000/google"
+              href="https://ai-generator-backend-production.up.railway.app/google"
               className="flex items-center gap-2 bg-white text-black font-semibold px-2 py-2 rounded-md hover:bg-gray-200 transition"
             >
               <img
