@@ -10,8 +10,8 @@ export const callGroqAPI = async (prompt: string) => {
       },
       body: JSON.stringify({
         // model: "qwen-qwq-32b",
-        model: "deepseek-r1-distill-llama-70b",
-        // model: "llama3-70b-8192", // or whichever model you are using
+        // model: "deepseek-r1-distill-llama-70b",
+        model: "llama3-70b-8192", // or whichever model you are using
         messages: [
           { role: "user", content: prompt }
         ],
